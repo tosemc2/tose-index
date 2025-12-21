@@ -11,59 +11,6 @@ body {
   /* overflow: hidden;  ← 削除または変更 */
   overflow-y: auto; /* 縦スクロールのみ許可 */
 }
-
-hr {
-  border: none;
-  border-top: 1px solid #444;
-  margin: 0;
-}
-
-/* ===== header ===== */
-.site-header {
-  height: 80px;
-  padding: 12px 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  overflow: hidden; /* ★ これが重要 */
-}
-
-.page-title {
-  font-size: 1.6rem;
-  font-weight: bold;
-}
-
-/* nav */
-.header-links {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  row-gap: 2px;        /* ← 縦の間隔 */
-  column-gap: 24px;    /* ← 横の間隔 */
-}
-
-.header-links li {
-  position: relative;
-}
-
-.header-links a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 13px;   /* 少し小さく */
-  line-height: 1.1;  /* 行間を詰める */
-  padding-left: 0.8em;
-}
-
-.header-links .active a::before {
-  content: "▶";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
 /* form */
 form {
   max-width: 600px;

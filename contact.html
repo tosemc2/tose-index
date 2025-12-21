@@ -3,24 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <title>お問い合わせフォーム</title>
+  <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/contact.css">
 </head>
 <body>
-      <!-- header -->
   <header class="site-header">
-    <div class="page-title">contact</div>
-    <nav class="header-nav">
+    <div class="header-left">
+      <h1 class="site-title">
+        ミカヅキ光路
+        <span class="ruby">Mikazuki Kouro</span>
+      </h1>
+    </div>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav class="header-nav" id="header-nav">
       <ul class="header-links">
         <li><a href="index.html">top</a></li>
         <li><a href="about.html">about</a></li>
         <li><a href="illustration.html">illustration</a></li>
-        <li class="active"><a href="contact.html">contact</a></li>
+        <li><a href="contact.html">contact</a></li>
       </ul>
     </nav>
   </header>
+
   <hr>
 
-  <form id="contactForm" action="thanks.html" method="get">
+  <!-- フォーム -->
+  <form id="contactForm">
     <label for="category">問い合わせ内容</label>
     <select name="category" id="category" required>
       <option value="">選択してください</option>
@@ -39,5 +53,6 @@
 
     <button type="submit">送信</button>
   </form>
+  <script src="js/contact.js"></script>
 </body>
 </html>

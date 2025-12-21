@@ -1,24 +1,27 @@
-/* illustration.html */
-body {
-  margin: 0;
-  font-family: sans-serif;
-  color: white;
-   background: url('../images/image2.jpeg') no-repeat center center fixed;
-  background-size: cover;
-  font-family: "Yu Gothic", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
-  overflow-y: hidden;
-}
-
+/* ===== reset ===== */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+body {
+  font-family: "Yu Gothic", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+  color: #fff;
+  background: url('../images/image2.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  overflow-y: hidden; /* ページ全体のスクロールは非表示 */
+}
+
+/* hr */
 hr {
   border: none;
-  border-top: 1px solid #444; /* 落ち着いたグレーの実線 */
+  border-top: 1px solid #444;
   margin: 0;
 }
-/* ヘッダー */
-header {
+
+/* ===== header ===== */
+header.site-header {
   background-color: #000;
   padding: 8px 20px;
   display: flex;
@@ -34,29 +37,28 @@ header {
 .header-left {
   display: flex;
   align-items: center;
-  gap: 20px; /* タイトルと説明文の間隔 */
+  gap: 20px;
 }
 
 header h1 {
   margin: 0;
   font-size: 24px;
-  color: white;
+  color: #fff;
 }
 
 .sub-description {
-  color: white;
+  color: #fff;
   font-size: 14px;
   line-height: 1.4;
 }
-/* ナビリンク */
+
+/* ===== ナビリンク ===== */
 .header-links {
   display: grid;
   grid-template-columns: repeat(2, auto);
   row-gap: 4px;
   column-gap: 40px;
   justify-content: start;
-  padding-left: 0;
-  margin: 0;
   list-style: none;
 }
 
@@ -84,34 +86,32 @@ header h1 {
   color: #fff;
 }
 
+/* ===== main container ===== */
 .container {
+  max-width: 900px;
+  height: 80vh; /* 高さは画面の80% */
+  margin: 40px auto;
   padding: 40px;
   background-color: rgba(0, 0, 0, 0.4);
-  max-width: 900px;
-  height: 80vh; /* 高さを画面の80%に設定（調整可） */
-  overflow-y: auto; /* 縦スクロール有効に */
-  margin: 40px auto;
   border-radius: 10px;
+  overflow-y: auto; /* 縦スクロール可能 */
 }
 
-.description {
-  margin-bottom: 30px;
-}
-
+/* ===== category ===== */
 .category {
   margin-bottom: 30px;
 }
 
 .category h2 {
   margin-bottom: 10px;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid #fff;
   display: inline-block;
 }
 
 .images {
   display: flex;
-  gap: 20px;
   flex-wrap: wrap;
+  gap: 20px;
 }
 
 .images img {
@@ -127,12 +127,12 @@ header h1 {
   transform: scale(1.05);
 }
 
-/* モーダル背景 */
+/* ===== モーダル ===== */
 .modal {
   display: none;
   position: fixed;
   z-index: 1000;
-  padding-top: 80px;
+  padding-top: 80px; /* ヘッダー分の余白 */
   left: 0;
   top: 0;
   width: 100%;
@@ -141,7 +141,6 @@ header h1 {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* モーダル画像 */
 .modal-content {
   display: block;
   margin: auto;
@@ -150,7 +149,6 @@ header h1 {
   border-radius: 8px;
 }
 
-/* 閉じるボタン */
 .close {
   position: absolute;
   top: 40px;
