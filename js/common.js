@@ -1,23 +1,33 @@
+// ヘッダー高さをCSS変数に
 const header = document.querySelector('.site-header');
-document.documentElement.style.setProperty('--header-height', `${header.offsetHeight}px`);
+if (header) {
+  document.documentElement.style.setProperty(
+    '--header-height',
+    `${header.offsetHeight}px`
+  );
+}
 
-// ハンバーガーと nav の取得
+// ハンバーガーと nav
 const hamburger = document.getElementById('hamburger');
 const nav = document.getElementById('header-nav');
 
-// ハンバーガークリックで nav 開閉
+// ハンバーガークリック
 if (hamburger && nav) {
   hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
     nav.classList.toggle('open');
+    document.body.classList.toggle('no-scroll');
   });
 }
 
-// クリックで nav を閉じたい場合（スマホでリンクを押したら閉じる）
-const navLinks = nav ? nav.querySelectorAll('a') : [];
-navLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    if (nav.classList.contains('open')) {
+// メニューリンククリックで閉じる
+if (nav) {
+  const navLinks = nav.querySelectorAll('a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('open');
       nav.classList.remove('open');
-    }
+      document.body.classList.remove('no-scroll');
+    });
   });
-});
+}

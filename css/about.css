@@ -9,29 +9,44 @@ body {
   font-family: "Yu Gothic", "游ゴシック体", sans-serif;
   background: #000;
   color: #fff;
-  overflow: hidden; /* ページ全体のスクロールはなし */
+  overflow: hidden; /* PCでは全体スクロール禁止 */
 }
 
-/* ===== main layout ===== */
+/* ===== layout ===== */
 .about-layout {
-  display: flex;
-  height: calc(100vh - 80px); /* ヘッダー分の高さを引く */
+  height: calc(100vh - 80px); /* ヘッダー分 */
 }
 
-/* 左テキスト */
-.about-text {
-  flex: 1;
-  padding: 36px 48px;
-  overflow-y: auto; /* 左テキストのみスクロール可能 */
-  max-height: 100%;
+/* ===== image + text container ===== */
+.about-image {
+  display: flex;
+  flex-direction: row-reverse; /* ★ 方法①：PCで左右反転 */
+  height: 100%;
 }
+
+/* ===== image ===== */
+.about-image img {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===== text (PC) ===== */
+.about-text {
+  width: 50%;
+  padding: 40px 48px;
+  overflow-y: auto; /* テキストのみスクロール */
+}
+
+/* ===== text styles ===== */
 .name {
   font-size: 1.8rem;
 }
 .name span {
   font-size: 1rem;
-  font-weight: normal;
   margin-left: 12px;
+  font-weight: normal;
 }
 .line {
   width: 240px;
@@ -40,81 +55,62 @@ body {
   margin: 12px 0 24px;
 }
 .about-text p {
-  font-size: 13px;
-  line-height: 1.8;
-  margin-bottom: 1.4em;
+  font-size: 0.9rem;
+  line-height: 1.9;
+  margin-bottom: 0.7em;
 }
-.work-list {
-  margin-bottom: 1.4em;
-  padding-left: 20px;
+.section-title {
+  margin: 20px 0 10px;
 }
 .work-list li {
-  margin-bottom: 0.6em;
+  margin-bottom: 0.4em;
 }
 
-/* 右画像 */
-.about-image {
-  width: 50%;
-  position: relative;
-  overflow: hidden;
-}
-.about-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+/* =========================
+   SP（レスポンシブ）
+========================= */
+@media (max-width: 768px) {
 
-/* overlay text (スマホ用) */
-.overlay-text {
-  display: none; /* PCでは非表示 */
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
-  overflow-y: auto;
-  padding: 20px;
-  box-sizing: border-box;
-}
-.overlay-inner {
-  max-width: 90%;
-}
+  /* ===== 全体スクロール禁止 ===== */
+  body {
+    overflow: hidden;
+  }
 
-@media screen and (max-width: 1024px) {
+  /* ===== レイアウト固定 ===== */
   .about-layout {
-    flex-direction: column;
-    height: auto;
+    height: calc(100svh - 80px); /* ヘッダー分を引く */
   }
 
-  .about-text {
-    display: none; /* 左テキスト非表示 */
-  }
-
+  /* ===== 画像コンテナ ===== */
   .about-image {
-    width: 100%;
-    height: auto;
+    display: block;             /* flex 完全解除 */
     position: relative;
-  }
-
-  .overlay-text {
-    display: block;
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: calc(100vh - 80px); /* ヘッダーを除いた高さ */
-    overflow-y: auto;
-    padding: 20px 10px;
-    box-sizing: border-box;
-  }
-
-  .overlay-inner {
-    width: 100%;
+    height: 100%;
   }
 
   .about-image img {
+    width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  /* ===== テキスト（唯一のスクロール領域） ===== */
+  .about-text {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 24px 20px;
+    background: rgba(0,0,0,0.6);
+
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+
+    z-index: 2;
+
+    font-size: clamp(0.9rem, 2.5vw, 1.05rem);
+    line-height: 1.9;
   }
 }

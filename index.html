@@ -9,7 +9,7 @@
 <body>
 
 <!-- スマホ用：右上ハンバーガー -->
-<button class="hamburger" aria-label="menu">
+<button class="hamburger" id="hamburger" aria-label="menu">
   <span></span>
   <span></span>
   <span></span>
@@ -18,10 +18,13 @@
 <div class="container">
   <!-- 左パネル -->
   <section class="left-panel">
-    <h1>ミカヅキ光路
+    <h1>
+      ミカヅキ光路
       <span class="ruby">Mikazuki Kouro</span>
     </h1>
-    <hr/>
+
+    <hr />
+
     <p class="author">ひびとせ / tose</p>
 
     <div class="social">
@@ -35,8 +38,8 @@
       <span><a href="https://www.instagram.com/tosemc2" target="_blank">tosemc2</a></span>
     </div>
 
-    <!-- PC用：socialの下に表示 -->
-    <nav class="nav">
+    <!-- PC用：左パネル下 -->
+    <nav class="nav" id="header-nav">
       <ul>
         <li><a href="index.html">top</a></li>
         <li><a href="about.html">about</a></li>
@@ -49,9 +52,17 @@
   <!-- 右パネル -->
   <section class="right-panel">
     <div class="slideshow">
-      <button class="btn prev">&#9664;</button>
-      <img src="images/image1.jpeg" alt="スライド画像" class="slide-image" />
-      <button class="btn next">&#9654;</button>
+      <div class="slide-wrapper">
+        <button class="btn prev">&#9664;</button>
+
+        <img
+          src="images/image1.jpeg"
+          alt="スライド画像"
+          class="slide-image"
+        />
+
+        <button class="btn next">&#9654;</button>
+      </div>
     </div>
   </section>
 </div>

@@ -1,6 +1,6 @@
-/* =================================================
+/* ==============================
    共通
-================================================= */
+============================== */
 html, body {
   margin: 0;
   padding: 0;
@@ -16,9 +16,9 @@ a {
   text-decoration: none;
 }
 
-/* =================================================
+/* ==============================
    レイアウト
-================================================= */
+============================== */
 .container {
   display: flex;
   height: 100vh;
@@ -26,40 +26,38 @@ a {
   box-sizing: border-box;
 }
 
-/* 左パネル */
+/* ==============================
+   左パネル
+============================== */
 .left-panel {
   width: 30%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   text-align: center;
-  gap: 0.4rem;
 }
 
 .left-panel h1 {
   font-size: 2.5rem;
   line-height: 1.3;
   margin: 0;
-  position: relative;
 }
 
-/* ルビ用 */
-.left-panel h1 .ruby {
+.left-panel .ruby {
   display: block;
-  font-size: 1rem;          /* 小さめ文字 */
-  color: #aaa;              /* 薄いグレーでかっこよく */
-  margin-top: 0.2rem;       /* h1との間隔 */
-  letter-spacing: 0.1em;    /* 英字を読みやすく */
+  font-size: 1rem;
+  color: #aaa;
+  margin-top: 0.2rem;
 }
 
 .left-panel hr {
   width: 60%;
   border-color: #555;
+  margin: 1rem 0;
 }
 
 .author {
-  margin: 0;
+  margin-bottom: 1rem;
 }
 
 /* SNS */
@@ -67,17 +65,17 @@ a {
   display: grid;
   grid-template-columns: auto auto;
   gap: 0.4rem 1rem;
-  margin: 1rem 0 1.5rem;
+  margin-bottom: 1.5rem;
   font-size: 0.9rem;
 }
 
-/* =================================================
-   ナビ（PC：socialの下）
-================================================= */
+/* ==============================
+   nav（PC：左パネル下）
+============================== */
 .nav ul {
-  list-style: none;   /* ・を消す */
-  margin: 0;
+  list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .nav li {
@@ -85,18 +83,18 @@ a {
 }
 
 .nav a {
-  display: block;            /* 横一列ホバー */
+  display: block;
   padding: 10px 20px;
-  transition: background-color 0.2s;
+  transition: background 0.2s;
 }
 
 .nav a:hover {
-  background-color: #444;
+  background: #444;
 }
 
-/* =================================================
+/* ==============================
    右パネル
-================================================= */
+============================== */
 .right-panel {
   width: 70%;
   display: flex;
@@ -104,25 +102,30 @@ a {
   align-items: center;
 }
 
-/* =================================================
+/* ==============================
    スライドショー
-================================================= */
+============================== */
 .slideshow {
-  position: relative;
-  width: 100%;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* 画像＋ボタンの基準 */
+.slide-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* 画像 */
 .slide-image {
   max-width: 100%;
-  max-height: 100%;
+  max-height: 90vh;
   object-fit: contain;
-  border-radius: 8px;
-  padding: 10px;
+  display: block;
   background: rgba(255,255,255,0.05);
+  padding: 10px;
+  border-radius: 8px;
 }
 
 /* ボタン */
@@ -130,24 +133,32 @@ a {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255,255,255,0.3);
+  background: rgba(0,0,0,0.6);
+  color: #fff;
   border: none;
   font-size: 2rem;
   cursor: pointer;
+  padding: 10px 14px;
 }
 
-.prev { left: 10px; }
-.next { right: 10px; }
+/* 左右配置 */
+.prev {
+  left: -60px;
+}
 
-/* =================================================
-   ハンバーガー（スマホ用）
-================================================= */
+.next {
+  right: -60px;
+}
+
+/* ==============================
+   ハンバーガー
+============================== */
 .hamburger {
-  display: none;              /* PCでは非表示 */
+  display: none;
   position: fixed;
   top: 20px;
   right: 20px;
-  z-index: 1000;
+  z-index: 1100;
   background: none;
   border: none;
   cursor: pointer;
@@ -161,14 +172,14 @@ a {
   margin: 5px 0;
 }
 
-/* =================================================
+/* ==============================
    スマホ対応
-================================================= */
+============================== */
 @media screen and (max-width: 768px) {
 
   .container {
     flex-direction: column;
-    height: auto;
+    padding: 1rem;
   }
 
   .left-panel,
@@ -181,22 +192,46 @@ a {
     display: block;
   }
 
-  /* nav を右上固定メニューに変える */
+  /* nav：上から下にスライド */
   .nav {
     position: fixed;
-    top: 60px;
-    right: 20px;
-    min-width: 200px;
+    inset: 0;
     background: #000;
-    display: none;
-    z-index: 999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transform: translateY(-100%);
+    transition: transform 0.4s ease;
+    z-index: 1000;
   }
 
   .nav.open {
-    display: block;
+    transform: translateY(0);
   }
 
-  .slide-image {
-    max-height: 50vh;
+  .nav ul {
+    width: 100%;
+  }
+
+  .nav li {
+    width: 100%;
+  }
+
+  .nav a {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 1.4rem;
+  }
+
+  /* SPではボタンを少し内側に */
+  .prev {
+    left: 0;
+  }
+
+  .next {
+    right: 0;
   }
 }
