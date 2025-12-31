@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>お問い合わせフォーム</title>
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/contact.css">
@@ -30,11 +30,13 @@
       </ul>
     </nav>
   </header>
-
   <hr>
-
   <!-- フォーム -->
-  <form id="contactForm">
+    <form
+     id="contactForm"
+     action="https://formspree.io/f/mgovwozw"
+     method="POST"
+    >
     <label for="category">問い合わせ内容</label>
     <select name="category" id="category" required>
       <option value="">選択してください</option>
