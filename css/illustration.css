@@ -159,3 +159,26 @@ header h1 {
   cursor: pointer;
   z-index: 1001;
 }
+/* ===== responsive ===== */
+@media screen and (max-width: 768px) {
+  .images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2列 */
+    gap: 16px;
+  }
+
+  .images img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1; /* 正方形を維持 */
+  }
+
+  .container {
+    padding: 20px;
+    height: auto;
+  }
+
+  body {
+    overflow-y: auto; /* スマホでは全体スクロール許可 */
+  }
+}
