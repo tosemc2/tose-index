@@ -32,13 +32,17 @@
     </nav>
   </header>
   <hr>
+
   <!-- フォーム -->
-    <form
-     id="contactForm"
-     action="https://formspree.io/f/mgovwozw"
-     method="POST"
-    >
-    <label for="category">問い合わせ内容</label>
+  <form
+    id="contactForm"
+    action="https://formspree.io/f/mgovwozw"
+    method="POST"
+  >
+    <!-- honeypot（Bot対策） -->
+    <input type="text" name="_gotcha" style="display:none">
+
+    <label for="category">問い合わせ内容<span class="required">(必須)</span></label>
     <select name="category" id="category" required>
       <option value="">選択してください</option>
       <option value="仕事の相談">お仕事の相談</option>
@@ -51,11 +55,28 @@
     <label for="email">メールアドレス<span class="required">(必須)</span></label>
     <input type="email" id="email" name="email" required>
 
-    <label for="message">内容</label>
-    <textarea id="message" name="message" rows="6"></textarea>
+    <label for="message">
+      内容<span class="required">(必須・30文字以上)</span>
+    </label>
+    <textarea
+      id="message"
+      name="message"
+      rows="6"
+      minlength="30"
+      required
+    ></textarea>
+
+    <!-- 注意文言（心理抑止） -->
+    <p class="notice">
+      ※本フォームはご依頼・ご相談専用です。<br>
+      誹謗中傷・迷惑行為と判断した内容には対応いたしません。
+    </p>
 
     <button type="submit">送信</button>
   </form>
+
+  <!-- 連投防止JS -->
+  <script src="js/contact.js"></script>
   <script src="js/common.js"></script>
   <script src="js/menu.js"></script>
 </body>
