@@ -1,15 +1,5 @@
 .main-contents {
     flex-direction: row;  /* PC：横並び */
-    gap: 0.5em;           /* h1とh2の間隔 */
     align-items: center;    /* 中央寄せ */
     text-align: center;
-}
-
-@media screen and (max-width: 768px) {
-    .main-contents {
-        display: flex;
-        flex-direction: column; /* SP：縦並び */
-        align-items: center;    /* 中央寄せ */
-        text-align: center;
-    }
 }
