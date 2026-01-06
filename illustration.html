@@ -1,71 +1,77 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>illustration</title>
-  <link rel="stylesheet" href="css/common.css">
-  <link rel="stylesheet" href="css/illustration.css">
-</head>
-<body>
-  <header class="site-header">
-  <div class="header-left">
-    <h1 class="site-title">
-  ミカヅキ光路
-  <span class="ruby">Mikazuki Kouro</span>
-</h1>
-  </div>
-  <div class="hamburger" id="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>illustration</title>
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/illustration.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-left">
+        <h1 class="site-title">
+          ミカヅキ光路
+          <span class="ruby">Mikazuki Kouro</span>
+        </h1>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
 
-  <nav class="nav" id="header-nav">
-    <ul class="header-links">
-      <li><a href="index.html">top</a></li>
-      <li><a href="about.html">about</a></li>
-      <li><a href="works.html">works</a></li>
-      <li><a href="illustration.html">illustration</a></li>
-      <li><a href="contact.html">contact</a></li>
-    </ul>
-  </nav>
-</header>
+      <nav class="nav" id="header-nav">
+        <ul class="header-links">
+          <li><a href="index.html">top</a></li>
+          <li><a href="about.html">about</a></li>
+          <li><a href="works.html">works</a></li>
+          <li>
+            <a
+              href="illustration.html"
+              style="background-color: #ccc; text-decoration: underline"
+              >illustration</a
+            >
+          </li>
+          <li><a href="contact.html">contact</a></li>
+        </ul>
+      </nav>
+    </header>
 
-<hr class="divider"/>
+    <hr class="divider" />
 
-<main class="container">
-  <div class="category">
-    <h2>[original]</h2>
-    <div class="images">
-      <img src="images/image1.jpeg" alt="original1">
-      <img src="images/image2.jpeg" alt="original2">
-      <img src="images/original1.jpeg" alt="original1">
-      <img src="images/original2.jpeg" alt="original2">
-      <img src="images/original3.jpeg" alt="original3">
-      <img src="images/original4.jpeg" alt="original4">
+    <main class="container">
+      <div class="category">
+        <h2>[original]</h2>
+        <div class="images">
+          <img src="images/image1.jpeg" alt="original1" />
+          <img src="images/image2.jpeg" alt="original2" />
+          <img src="images/original1.jpeg" alt="original1" />
+          <img src="images/original2.jpeg" alt="original2" />
+          <img src="images/original3.jpeg" alt="original3" />
+          <img src="images/original4.jpeg" alt="original4" />
+        </div>
+      </div>
+
+      <div class="category">
+        <h2>[fanart]</h2>
+        <div class="images">
+          <img src="images/fanart1.jpeg" alt="fanart1" />
+          <img src="images/fanart2.jpeg" alt="fanart2" />
+          <img src="images/fanart3.jpeg" alt="fanart3" />
+          <img src="images/fanart4.jpeg" alt="fanart4" />
+          <img src="images/fanart5.jpeg" alt="fanart5" />
+        </div>
+      </div>
+    </main>
+
+    <!-- モーダル -->
+    <div id="modal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="modal-img" />
     </div>
-  </div>
-
-  <div class="category">
-    <h2>[fanart]</h2>
-    <div class="images">
-      <img src="images/fanart1.jpeg" alt="fanart1">
-      <img src="images/fanart2.jpeg" alt="fanart2">
-      <img src="images/fanart3.jpeg" alt="fanart3">
-      <img src="images/fanart4.jpeg" alt="fanart4">
-      <img src="images/fanart5.jpeg" alt="fanart5">
-    </div>
-  </div>
-</main>
-
-<!-- モーダル -->
-<div id="modal" class="modal">
-  <span class="close">&times;</span>
-  <img class="modal-content" id="modal-img">
-</div>
-<script src="js/common.js"></script>
-<script src="js/menu.js"></script>
-<script src="js/illustration.js"></script>
-</body>
+    <script src="js/common.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/illustration.js"></script>
+  </body>
 </html>

@@ -1,74 +1,93 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ミカヅキ光路</title>
-  <link rel="stylesheet" href="css/index.css" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ミカヅキ光路</title>
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <!-- スマホ用：右上ハンバーガー -->
+    <button class="hamburger" id="hamburger" aria-label="menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
 
-<!-- スマホ用：右上ハンバーガー -->
-<button class="hamburger" id="hamburger" aria-label="menu">
-  <span></span>
-  <span></span>
-  <span></span>
-</button>
+    <div class="container">
+      <!-- 左パネル -->
+      <section class="left-panel">
+        <h1>
+          ミカヅキ光路
+          <span class="ruby">Mikazuki Kouro</span>
+        </h1>
 
-<div class="container">
-  <!-- 左パネル -->
-  <section class="left-panel">
-    <h1>
-      ミカヅキ光路
-      <span class="ruby">Mikazuki Kouro</span>
-    </h1>
+        <hr />
 
-    <hr />
+        <p class="author">ひびとせ / tose</p>
 
-    <p class="author">ひびとせ / tose</p>
+        <div class="social">
+          <span>Bluesky</span>
+          <span
+            ><a
+              href="https://bsky.app/profile/tosemc2.bsky.social"
+              target="_blank"
+              >@tosemc2</a
+            ></span
+          >
 
-    <div class="social">
-      <span>Bluesky</span>
-      <span><a href="https://bsky.app/profile/tosemc2.bsky.social" target="_blank">@tosemc2</a></span>
+          <span>X</span>
+          <span
+            ><a href="https://x.com/tosemc2?s=21" target="_blank"
+              >@tosemc2</a
+            ></span
+          >
 
-      <span>X</span>
-      <span><a href="https://x.com/tosemc2?s=21" target="_blank">@tosemc2</a></span>
+          <span>Instagram</span>
+          <span
+            ><a href="https://www.instagram.com/tosemc2" target="_blank"
+              >tosemc2</a
+            ></span
+          >
+        </div>
 
-      <span>Instagram</span>
-      <span><a href="https://www.instagram.com/tosemc2" target="_blank">tosemc2</a></span>
+        <!-- PC用：左パネル下 -->
+        <nav class="nav" id="header-nav">
+          <ul>
+            <li>
+              <a
+                href="index.html"
+                style="background-color: #ccc; text-decoration: underline"
+                >top</a
+              >
+            </li>
+            <li><a href="about.html">about</a></li>
+            <li><a href="works.html">works</a></li>
+            <li><a href="illustration.html">illustration</a></li>
+            <li><a href="contact.html">contact</a></li>
+          </ul>
+        </nav>
+      </section>
+
+      <!-- 右パネル -->
+      <section class="right-panel">
+        <div class="slideshow">
+          <div class="slide-wrapper">
+            <button class="btn prev">&#9664;</button>
+
+            <img
+              src="images/image1.jpeg"
+              alt="スライド画像"
+              class="slide-image"
+            />
+
+            <button class="btn next">&#9654;</button>
+          </div>
+        </div>
+      </section>
     </div>
 
-    <!-- PC用：左パネル下 -->
-    <nav class="nav" id="header-nav">
-      <ul>
-        <li><a href="index.html">top</a></li>
-        <li><a href="about.html">about</a></li>
-        <li><a href="works.html">works</a></li>
-        <li><a href="illustration.html">illustration</a></li>
-        <li><a href="contact.html">contact</a></li>
-      </ul>
-    </nav>
-  </section>
-
-  <!-- 右パネル -->
-  <section class="right-panel">
-    <div class="slideshow">
-      <div class="slide-wrapper">
-        <button class="btn prev">&#9664;</button>
-
-        <img
-          src="images/image1.jpeg"
-          alt="スライド画像"
-          class="slide-image"
-        />
-
-        <button class="btn next">&#9654;</button>
-      </div>
-    </div>
-  </section>
-</div>
-
-<script src="js/menu.js"></script>
-<script src="js/slideshow.js"></script>
-</body>
+    <script src="js/menu.js"></script>
+    <script src="js/slideshow.js"></script>
+  </body>
 </html>

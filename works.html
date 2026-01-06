@@ -1,47 +1,80 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>works</title>
-  <link rel="stylesheet" href="css/common.css">
-  <link rel="stylesheet" href="css/works.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>illustration</title>
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/works.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-left">
+        <h1 class="site-title">
+          ミカヅキ光路
+          <span class="ruby">Mikazuki Kouro</span>
+        </h1>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
 
-</head>
-<body>
-  <header class="site-header">
-    <div class="header-left">
-      <h1 class="site-title">
-        ミカヅキ光路
-        <span class="ruby">Mikazuki Kouro</span>
-      </h1>
+      <nav class="nav" id="header-nav">
+        <ul class="header-links">
+          <li><a href="index.html">top</a></li>
+          <li><a href="about.html">about</a></li>
+          <li>
+            <a
+              href="works.html"
+              style="background-color: #ccc; text-decoration: underline"
+              >works</a
+            >
+          </li>
+          <li><a href="illustration.html">illustration</a></li>
+          <li><a href="contact.html">contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <hr class="divider" />
+
+    <main class="container">
+      <div class="category">
+        <h2>[works]</h2>
+        <div class="images">
+          <img src="images/image1.jpeg" alt="original1" />
+          <img src="images/image2.jpeg" alt="original2" />
+          <img src="images/original1.jpeg" alt="original1" />
+          <img src="images/original2.jpeg" alt="original2" />
+          <img src="images/original3.jpeg" alt="original3" />
+          <img src="images/original4.jpeg" alt="original4" />
+        </div>
+      </div>
+
+      <div class="category">
+        <h2>[contest]</h2>
+        <div class="images">
+          <img
+            src="images/contest(1).jpeg"
+            alt="contest1"
+            data-caption="【エノめぐ88イラコン2025】
+            江ノ島タクシー ✖️ megumi88works
+            イラストコンテスト megumi88works賞受賞"
+          />
+        </div>
+      </div>
+    </main>
+
+    <!-- モーダル -->
+    <div id="modal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="modal-img" />
+      <p id="modal-caption"></p>
     </div>
-
-    <!-- ハンバーガー -->
-    <button class="hamburger" id="hamburger" aria-label="menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-    <!-- nav -->
-    <nav class="nav" id="header-nav">
-      <ul>
-        <li><a href="index.html">top</a></li>
-        <li><a href="about.html">about</a></li>
-        <li><a href="works.html">works</a></li>
-        <li><a href="illustration.html">illustration</a></li>
-        <li><a href="contact.html">contact</a></li>
-      </ul>
-    </nav>
-  </header>
-  <!-- main -->
-
-  <main class="main-contents">
-    <h1>Coming soon</h1>
-  </main>
-
-  <!-- JS -->
-  <script src="js/common.js"></script>
-</body>
+    <script src="js/common.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/works.js"></script>
+  </body>
 </html>
