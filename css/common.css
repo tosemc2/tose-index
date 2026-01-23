@@ -5,7 +5,8 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   font-family: "Yu Gothic", "Meiryo", sans-serif;
   background: #000;
@@ -65,12 +66,13 @@ a {
   height: 3px;
   background: #fff;
   margin: 5px 0;
-  transition: transform 0.3s, opacity 0.3s;
+  transition:
+    transform 0.3s,
+    opacity 0.3s;
 }
 
 /* ===== SP ===== */
 @media screen and (max-width: 768px) {
-
   .hamburger {
     display: block;
   }
@@ -79,7 +81,7 @@ a {
     position: fixed;
     inset: 0;
     width: 100vw;
-    height: 60vh; /* ← 修正ポイント */
+    /* height: 60vh; ← 修正ポイント */
     background: #000;
 
     display: flex;
@@ -91,7 +93,7 @@ a {
 
     z-index: 1000;
   }
-   .nav ul li a {
+  .nav ul li a {
     font-size: 1.4rem;
   }
 
