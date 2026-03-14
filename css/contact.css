@@ -69,15 +69,6 @@ button:hover {
 .message a {
   color: skyblue;
 }
-.contact-img {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  text-align: center;
-  max-width: 100%;
-}
-.contact-img img {
-  width: 100%;
-}
 @media (max-width: 768px) {
   .message {
     font-size: 0.8rem;
@@ -85,20 +76,9 @@ button:hover {
   form {
     max-width: 600px;
   }
-  .contact-img {
-    text-align: center;
-    display: block;
-  }
-  .contact-img img {
-    width: 100%;
-  }
 }
 @media (max-width: 478px) {
   .message {
     font-size: 0.6rem;
-  }
-  .contact-img {
-    text-align: center;
-    display: block;
   }
 }
